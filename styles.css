@@ -111,6 +111,7 @@ p{line-height:1.7}
 .hero-subtitle{color:#4b5563;font-size:1.15rem;margin-bottom:36px;line-height:1.7;max-width:480px}
 .hero-btns{display:flex;flex-wrap:wrap;gap:16px}
 .hero-illustration{display:flex;justify-content:center;align-items:center}
+.hero-illustration svg{max-width:100%;height:auto;display:block}
 
 /* Blob float animations */
 @keyframes float1{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(1.5deg)}}
@@ -229,7 +230,7 @@ p{line-height:1.7}
 .unete-col li::before{content:'✓';color:#fff;background:rgba(255,255,255,.25);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;font-weight:700;margin-top:1px}
 .iban-box{background:rgba(255,255,255,.2);border-radius:12px;padding:16px 20px;margin-top:16px}
 .iban-box .iban-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.7);margin-bottom:4px}
-.iban-box .iban-num{font-family:'Nunito',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;letter-spacing:.04em}
+.iban-box .iban-num{font-family:'Nunito',sans-serif;font-weight:700;color:#fff;font-size:1.05rem;letter-spacing:.04em;word-break:break-all}
 .unete-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
 
 /* ============================================================
@@ -299,13 +300,21 @@ input::placeholder,textarea::placeholder{color:#9ca3af}
   .form-group.full{grid-column:1}
   .child-fields-inner{grid-template-columns:1fr}
   .child-fields.visible{max-height:320px}
-  .footer-inner{grid-template-columns:1fr;gap:32px}
+  .footer-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .footer-logo img{margin:0 auto}
+  .footer-tagline{margin:8px auto 0}
+  .footer-links{align-items:center}
   .footer-bottom{flex-direction:column;text-align:center}
   .nav-links,.nav-cta{display:none}
   .nav-hamburger{display:flex}
   .mobile-menu{display:flex}
   .unete-btns{flex-direction:column;align-items:center}
   .whatsapp-float{width:50px;height:50px;bottom:16px;right:16px}
+}
+@media(max-width:580px){
+  .obj-item{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+  .obj-num{font-size:2.4rem;line-height:1}
+  .obj-icon{margin-top:0}
 }
 @media(max-width:480px){
   h1{font-size:2rem}
