@@ -322,3 +322,92 @@ input::placeholder,textarea::placeholder{color:#9ca3af}
   .act-grid{grid-template-columns:1fr}
   .btn-lg{padding:15px 28px;font-size:1rem}
 }
+
+/* ============================================================
+   OBJETIVO ITEM — YELLOW (4.º objetivo)
+   ============================================================ */
+.obj-item.yellow{border-left-color:var(--yellow)}
+.obj-item.yellow .obj-num{color:#c79a00;opacity:.4}
+
+/* ============================================================
+   ACTIVIDADES — PLACEHOLDER IMAGEN EN TARJETA
+   ============================================================ */
+.act-img-placeholder{margin-top:12px;border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:rgba(0,0,0,.04)}
+.act-img-placeholder svg{width:100%;height:100%;display:block}
+
+/* ============================================================
+   VÍDEO DE PRESENTACIÓN (index.html)
+   ============================================================ */
+.vidpres-wrapper{max-width:840px;margin:0 auto}
+.vidpres-wrapper iframe,.vidpres-wrapper video{width:100%;aspect-ratio:16/9;border-radius:var(--radius-xl);display:block;box-shadow:var(--shadow-lg)}
+.vidpres-placeholder{background:linear-gradient(135deg,var(--dark) 0%,#2d3380 100%);border-radius:var(--radius-xl);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff;text-align:center;padding:40px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.vidpres-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(116,194,225,.15) 0%,transparent 70%);pointer-events:none}
+.vidpres-play{width:72px;height:72px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.2);flex-shrink:0}
+.vidpres-text p{font-size:.95rem;color:rgba(255,255,255,.7);max-width:400px;margin:0 auto}
+
+/* ============================================================
+   HIMNO / VIDEOCLIP (actividades.html)
+   ============================================================ */
+.himno-video-wrapper{max-width:800px;margin:0 auto}
+.himno-video-wrapper iframe,.himno-video-wrapper video{width:100%;aspect-ratio:16/9;border-radius:var(--radius-xl);display:block;box-shadow:var(--shadow-lg)}
+.himno-placeholder{background:linear-gradient(135deg,#E63946 0%,#F4A0B5 100%);border-radius:var(--radius-xl);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:#fff;text-align:center;padding:40px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.himno-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 35% 60%,rgba(255,255,255,.12) 0%,transparent 65%);pointer-events:none}
+.himno-play-btn{width:80px;height:80px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.3);flex-shrink:0}
+.himno-placeholder-text strong{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900}
+.himno-placeholder-text p{font-size:.95rem;color:rgba(255,255,255,.8);max-width:420px;margin:8px auto 0}
+
+/* ============================================================
+   CALENDARIO SOLIDARIO (actividades.html)
+   ============================================================ */
+.calendario-inner{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;background:#fff;border-radius:var(--radius-xl);padding:48px 40px;box-shadow:var(--shadow);max-width:860px;margin:40px auto 0}
+.calendario-icon{font-size:5rem;line-height:1;flex-shrink:0}
+.calendario-content h3{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;margin-bottom:12px;color:var(--dark)}
+.calendario-content p{color:#4b5563;line-height:1.7;font-size:.97rem}
+.calendario-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.cal-badge{background:rgba(249,199,79,.15);border:1.5px solid rgba(249,199,79,.4);color:#7a5f00;border-radius:var(--radius-pill);padding:6px 14px;font-size:.83rem;font-weight:700;font-family:'Nunito',sans-serif}
+@media(max-width:600px){
+  .calendario-inner{grid-template-columns:1fr;text-align:center;padding:32px 24px}
+  .calendario-icon{font-size:3.5rem}
+  .calendario-badges{justify-content:center}
+}
+
+/* ============================================================
+   NOTICIAS (noticias.html)
+   ============================================================ */
+.news-list{display:flex;flex-direction:column;gap:32px;margin-top:40px}
+.news-card{background:#fff;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease;display:grid;grid-template-columns:1.2fr 1fr}
+.news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.news-img{position:relative;overflow:hidden;min-height:220px}
+.news-img img{width:100%;height:100%;object-fit:cover;display:block}
+.news-badge{position:absolute;top:16px;left:16px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:700;font-size:.75rem;text-transform:uppercase;color:#fff;border-radius:var(--radius-pill)}
+.news-badge.green{background:var(--green)}
+.news-badge.red{background:var(--red)}
+.news-badge.blue{background:var(--blue);color:var(--dark)}
+.news-badge.yellow{background:var(--yellow);color:var(--dark)}
+.news-body{padding:32px;display:flex;flex-direction:column;justify-content:center}
+.news-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.news-date{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:#8892b0;font-weight:500}
+.news-tag{background:rgba(82,183,136,.12);color:var(--green);font-size:.78rem;font-weight:700;font-family:'Nunito',sans-serif;padding:3px 10px;border-radius:var(--radius-pill);text-transform:uppercase;letter-spacing:.05em}
+.news-body h3{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.35rem;color:var(--dark);margin-bottom:12px;line-height:1.25}
+.news-body p{font-size:.95rem;color:#4b5563;line-height:1.65}
+.news-footer{margin-top:16px;padding-top:12px;border-top:1px solid #f0f0f0}
+@media(max-width:768px){
+  .news-card{grid-template-columns:1fr}
+  .news-img{min-height:200px}
+}
+
+/* ============================================================
+   PATROCINADORES / SPONSORS (footer)
+   ============================================================ */
+.sponsors-section{padding:32px 0 8px;position:relative;z-index:1}
+.sponsors-label{text-align:center;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:24px;font-weight:600}
+.sponsors-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px}
+.sponsor-item{display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.7;transition:opacity .25s ease}
+.sponsor-item:hover{opacity:1}
+.sponsor-placeholder{width:72px;height:72px;display:flex;align-items:center;justify-content:center}
+.sponsor-name{font-size:.7rem;color:rgba(255,255,255,.5);text-align:center;font-weight:600;letter-spacing:.03em;line-height:1.3}
+@media(max-width:480px){
+  .sponsors-grid{gap:16px}
+  .sponsor-placeholder{width:56px;height:56px}
+  .sponsor-name{font-size:.65rem}
+}

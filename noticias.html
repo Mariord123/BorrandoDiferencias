@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noticias — Borrando Diferencias</title>
+<meta name="description" content="Últimas noticias y novedades de la Asociación Borrando Diferencias en Cabra, Córdoba. Conoce lo que hacemos y nuestros logros.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-offset">
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero">
+  <div class="blob-container" aria-hidden="true">
+    <svg style="top:-15%;right:-4%;width:280px;opacity:.07;position:absolute" viewBox="0 0 100 200"><g transform="rotate(15 50 100)"><rect x="10" y="10" width="80" height="180" rx="40" fill="#fff"/></g></svg>
+    <svg style="bottom:-10%;left:-2%;width:220px;opacity:.06;position:absolute" viewBox="0 0 100 200"><g transform="rotate(-20 50 100)"><rect x="10" y="10" width="80" height="180" rx="40" fill="#fff"/></g></svg>
+  </div>
+  <div class="container" style="position:relative;z-index:1">
+    <span class="page-hero-tag">Actualidad</span>
+    <h1>Noticias</h1>
+    <p>Todo lo que hacemos, vivimos y compartimos. Aquí encontrarás nuestras novedades, eventos y logros más recientes.</p>
+    <nav class="breadcrumb" aria-label="Migas de pan">
+      <a href="index.html">Inicio</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,.85)">Noticias</span>
+    </nav>
+  </div>
+</section>
+
+<!-- ============================================================
+     NOTICIAS
+     ============================================================ -->
+<section class="section-pad" style="background:var(--bg-alt)" aria-labelledby="news-title">
+  <div class="container">
+    <div class="section-title-wrapper">
+      <div class="section-tag">Últimas novedades</div>
+      <h2 id="news-title">Lo que hemos hecho</h2>
+      <p style="color:#6b7280;margin-top:12px;font-size:1.05rem">Actualizamos esta sección una o dos veces al año con todo lo que hacemos</p>
+    </div>
+
+    <!-- INSTRUCCIONES PARA AÑADIR NOTICIAS:
+         Copia uno de los bloques .news-card y pégalo al inicio de .news-list.
+         Cambia la fecha, la imagen (o el SVG placeholder), el título y el texto.
+         Para añadir una imagen real: <img src="nombre_foto.jpg" alt="descripción" style="width:100%;height:100%;object-fit:cover">
+    -->
+
+    <div class="news-list">
+
+      <!-- NOTICIA 1 (ejemplo) -->
+      <article class="news-card fade-up" aria-labelledby="news-1-title">
+        <div class="news-img">
+          <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder foto noticia 1" style="width:100%;height:100%;display:block">
+            <rect width="100%" height="100%" fill="rgba(82,183,136,.12)"/>
+            <circle cx="300" cy="120" r="70" fill="rgba(82,183,136,.2)"/>
+            <circle cx="120" cy="200" r="30" fill="rgba(116,194,225,.15)"/>
+            <circle cx="480" cy="80" r="45" fill="rgba(249,199,79,.15)"/>
+            <text x="50%" y="240" font-family="'Nunito',sans-serif" font-weight="700" font-size="16" fill="#94a3b8" text-anchor="middle">📷 Añade aquí la foto de la noticia</text>
+          </svg>
+          <span class="news-badge green">Fin de Curso</span>
+        </div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-date">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2" stroke="#8892b0" stroke-width="1.5"/><path d="M5 1v3M11 1v3M2 7h12" stroke="#8892b0" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Junio 2026
+            </span>
+            <span class="news-tag">Actividades</span>
+          </div>
+          <h3 id="news-1-title">Clausura del Curso 2025–2026</h3>
+          <p>Otra año más lleno de ilusión, logros y momentos que recordaremos para siempre. En nuestra clausura de fin de curso celebramos el esfuerzo y el progreso de todos los niños y niñas que forman parte de Borrando Diferencias.</p>
+          <p style="margin-top:10px">Los talleres de teatro, deporte, psicomotricidad y apoyo escolar han marcado la diferencia este año. ¡Enhorabuena a todas las familias!</p>
+          <div class="news-footer">
+            <span style="font-size:.85rem;color:#6b7280">Por la Junta Directiva</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- NOTICIA 2 (ejemplo) -->
+      <article class="news-card fade-up" aria-labelledby="news-2-title">
+        <div class="news-img">
+          <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder foto noticia 2" style="width:100%;height:100%;display:block">
+            <rect width="100%" height="100%" fill="rgba(230,57,70,.07)"/>
+            <circle cx="300" cy="120" r="80" fill="rgba(230,57,70,.12)"/>
+            <circle cx="450" cy="200" r="35" fill="rgba(244,160,181,.15)"/>
+            <circle cx="130" cy="90" r="40" fill="rgba(249,199,79,.15)"/>
+            <text x="50%" y="240" font-family="'Nunito',sans-serif" font-weight="700" font-size="16" fill="#94a3b8" text-anchor="middle">📷 Añade aquí la foto de la noticia</text>
+          </svg>
+          <span class="news-badge red">Convivencia</span>
+        </div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-date">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2" stroke="#8892b0" stroke-width="1.5"/><path d="M5 1v3M11 1v3M2 7h12" stroke="#8892b0" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Enero 2026
+            </span>
+            <span class="news-tag">Familias</span>
+          </div>
+          <h3 id="news-2-title">Convivencia Familiar de Invierno</h3>
+          <p>Un fin de semana mágico donde las familias de Borrando Diferencias nos reunimos para compartir risas, experiencias y el calor de nuestra comunidad. Un tiempo de desconexión y reconexión que nos recarga las pilas para afrontar el año con fuerza.</p>
+          <p style="margin-top:10px">Más de 30 familias participaron en esta edición. ¡Hasta el año que viene!</p>
+          <div class="news-footer">
+            <span style="font-size:.85rem;color:#6b7280">Por la Junta Directiva</span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.news-list -->
+
+    <!-- Nota editorial -->
+    <div class="fade-up" style="background:rgba(82,183,136,.1);border-left:4px solid var(--green);border-radius:12px;padding:20px 24px;margin-top:40px;font-size:.92rem;color:#374151">
+      <strong>📝 ¿Cómo añadir una nueva noticia?</strong> Copia uno de los bloques <code style="background:rgba(0,0,0,.07);padding:2px 6px;border-radius:4px">&lt;article class="news-card"&gt;...&lt;/article&gt;</code> y pégalo al inicio de la lista. Cambia la fecha, el título, el texto y la imagen. Actualizamos esta sección una o dos veces al año.
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:64px 0;text-align:center;background:#fff">
+  <div class="container">
+    <h2 class="fade-up" style="margin-bottom:16px">¿Quieres estar al día?</h2>
+    <p class="fade-up" style="color:#6b7280;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">Síguenos en redes sociales para no perderte nada de lo que hacemos.</p>
+    <div class="fade-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="https://www.facebook.com/AsociacionBorrandoDiferencias" target="_blank" rel="noopener noreferrer" class="btn btn-outline-green btn-lg">
+        📘 Facebook
+      </a>
+      <a href="https://www.instagram.com/borrandodiferencias" target="_blank" rel="noopener noreferrer" class="btn btn-red btn-lg">
+        📸 Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="shared.js"></script>
+</body>
+</html>

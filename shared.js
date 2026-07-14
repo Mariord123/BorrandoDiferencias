@@ -16,6 +16,7 @@ var navHTML = `
         <li><a href="nosotros.html" class="${currentPage==='nosotros.html'?'active':''}">Sobre Nosotros</a></li>
         <li><a href="objetivos.html" class="${currentPage==='objetivos.html'?'active':''}">Objetivos</a></li>
         <li><a href="actividades.html" class="${currentPage==='actividades.html'?'active':''}">Actividades</a></li>
+        <li><a href="noticias.html" class="${currentPage==='noticias.html'?'active':''}">Noticias</a></li>
         <li><a href="unete.html" class="${currentPage==='unete.html'?'active':''}">Únete</a></li>
         <li><a href="contacto.html" class="${currentPage==='contacto.html'?'active':''}">Contacto</a></li>
       </ul>
@@ -30,6 +31,7 @@ var navHTML = `
     <a href="nosotros.html" class="${currentPage==='nosotros.html'?'active':''}">Sobre Nosotros</a>
     <a href="objetivos.html" class="${currentPage==='objetivos.html'?'active':''}">Objetivos</a>
     <a href="actividades.html" class="${currentPage==='actividades.html'?'active':''}">Actividades</a>
+    <a href="noticias.html" class="${currentPage==='noticias.html'?'active':''}">Noticias</a>
     <a href="unete.html" class="${currentPage==='unete.html'?'active':''}">Únete</a>
     <a href="contacto.html" class="${currentPage==='contacto.html'?'active':''}">Contacto</a>
     <a href="contacto.html" class="btn btn-red">ASÓCIATE</a>
@@ -58,11 +60,81 @@ var footerHTML = `
         <a href="https://www.facebook.com/AsociacionBorrandoDiferencias" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           📘 Facebook
         </a>
+        <a href="https://www.instagram.com/borrandodiferencias" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          📸 Instagram
+        </a>
+        <a href="https://www.youtube.com/@borrandodiferencias" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          ▶️ YouTube
+        </a>
         <a href="https://wa.me/34666729863?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           💬 WhatsApp
         </a>
       </div>
     </div>
+    <hr class="footer-divider">
+
+    <!-- ============================================================
+         ENTIDADES COLABORADORAS / PATROCINADORAS
+         INSTRUCCIONES: Para añadir los logos reales, sustituye cada
+         bloque .sponsor-item por: <img src="logo_entidad.png" alt="Nombre entidad">
+         y ajusta el tamaño con width/height según sea necesario.
+         ============================================================ -->
+    <div class="sponsors-section">
+      <p class="sponsors-label">Con el apoyo de nuestras entidades colaboradoras</p>
+      <div class="sponsors-grid">
+        <div class="sponsor-item" title="Ayuntamiento de Cabra">
+          <div class="sponsor-placeholder">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48">
+              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+              <text x="40" y="36" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="900" font-size="10" fill="rgba(255,255,255,.7)">AYT.</text>
+              <text x="40" y="50" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="700" font-size="8" fill="rgba(255,255,255,.55)">CABRA</text>
+            </svg>
+          </div>
+          <span class="sponsor-name">Ayuntamiento<br>de Cabra</span>
+        </div>
+        <div class="sponsor-item" title="Junta de Andalucía">
+          <div class="sponsor-placeholder">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48">
+              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+              <text x="40" y="36" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="900" font-size="9" fill="rgba(255,255,255,.7)">JUNTA</text>
+              <text x="40" y="50" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="700" font-size="7.5" fill="rgba(255,255,255,.55)">ANDALUCÍA</text>
+            </svg>
+          </div>
+          <span class="sponsor-name">Junta de<br>Andalucía</span>
+        </div>
+        <div class="sponsor-item" title="Diputación de Córdoba">
+          <div class="sponsor-placeholder">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48">
+              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+              <text x="40" y="36" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="900" font-size="9" fill="rgba(255,255,255,.7)">DIPUT.</text>
+              <text x="40" y="50" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="700" font-size="8" fill="rgba(255,255,255,.55)">CÓRDOBA</text>
+            </svg>
+          </div>
+          <span class="sponsor-name">Diputación<br>de Córdoba</span>
+        </div>
+        <div class="sponsor-item" title="Delegación de Igualdad">
+          <div class="sponsor-placeholder">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48">
+              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+              <text x="40" y="36" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="900" font-size="9" fill="rgba(255,255,255,.7)">IGUAL-</text>
+              <text x="40" y="50" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="700" font-size="8" fill="rgba(255,255,255,.55)">DAD</text>
+            </svg>
+          </div>
+          <span class="sponsor-name">Delegación<br>de Igualdad</span>
+        </div>
+        <div class="sponsor-item" title="Participación Ciudadana">
+          <div class="sponsor-placeholder">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48">
+              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+              <text x="40" y="36" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="900" font-size="8.5" fill="rgba(255,255,255,.7)">PARTIC.</text>
+              <text x="40" y="50" text-anchor="middle" font-family="'Nunito',sans-serif" font-weight="700" font-size="7.5" fill="rgba(255,255,255,.55)">CIUDADANA</text>
+            </svg>
+          </div>
+          <span class="sponsor-name">Participación<br>Ciudadana</span>
+        </div>
+      </div>
+    </div>
+
     <hr class="footer-divider">
     <div class="footer-bottom">
       <p>© 2024 Borrando Diferencias. Todos los derechos reservados.</p>
