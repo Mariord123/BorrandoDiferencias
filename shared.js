@@ -106,9 +106,14 @@ var footerHTML = `
     </div>
 
     <hr class="footer-divider">
-    <div class="footer-bottom">
-      <p>© 2024 Borrando Diferencias. Todos los derechos reservados.</p>
-      <p>Hecho con ❤️ en Cabra, Córdoba</p>
+    <div class="footer-bottom" style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px">
+      <p>© 2024 Borrando Diferencias · C.I.F. G-14981881. Todos los derechos reservados.</p>
+      <p style="margin:4px 0">
+        <a href="aviso-legal.html" style="color:rgba(255,255,255,.65); text-decoration:underline; font-size:.85rem; margin-right:16px">Aviso Legal</a>
+        <a href="privacidad.html" style="color:rgba(255,255,255,.65); text-decoration:underline; font-size:.85rem; margin-right:16px">Política de Privacidad</a>
+        <a href="cookies.html" style="color:rgba(255,255,255,.65); text-decoration:underline; font-size:.85rem">Política de Cookies</a>
+      </p>
+      <p style="font-size:.8rem; opacity:.75">Hecho con ❤️ en Cabra, Córdoba</p>
     </div>
   </div>
 </footer>
@@ -170,14 +175,24 @@ if(form){
     e.preventDefault();
     var valid = true;
     form.querySelectorAll('[required]').forEach(function(i){
-      i.style.borderColor = '';
-      if(!i.value.trim()){ i.style.borderColor='var(--red)'; valid=false; }
+      if (i.type === 'checkbox') {
+        var parentLabel = i.closest('label') || i.parentElement;
+        parentLabel.style.color = '';
+        if(!i.checked){ parentLabel.style.color='var(--red)'; valid=false; }
+      } else {
+        i.style.borderColor = '';
+        if(!i.value.trim()){ i.style.borderColor='var(--red)'; valid=false; }
+      }
     });
     var em = document.getElementById('email');
     if(em && em.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)){
       em.style.borderColor='var(--red)'; valid=false;
     }
-    if(!valid){ form.querySelector('[required]').focus(); return; }
+    if(!valid){ 
+      var firstInvalid = form.querySelector('[required]:invalid') || form.querySelector('[required]');
+      if (firstInvalid) firstInvalid.focus();
+      return; 
+    }
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'ENVIANDO...';
@@ -223,5 +238,57 @@ var btnA = document.getElementById('btn-activo');
 var btnC = document.getElementById('btn-colaborador');
 if(btnA) btnA.addEventListener('click', function(){ setTimeout(function(){ selectType('activo'); },300); });
 if(btnC) btnC.addEventListener('click', function(){ setTimeout(function(){ selectType('colaborador'); },300); });
+
+/* ---- BANNER DE COOKIES DINÁMICO ---- */
+function initCookiesBanner() {
+  if (localStorage.getItem('cookies-accepted') !== null) {
+    return; // Ya ha aceptado o rechazado las cookies
+  }
+
+  var bannerHTML = `
+    <div id="cookies-banner" style="position:fixed; bottom:20px; left:20px; right:20px; max-width:600px; background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(26,26,46,0.2); padding:24px; z-index:9999; display:flex; flex-direction:column; gap:16px; border:1px solid #e2e8f0; font-family:'Inter',sans-serif; animation:slideUpCookies .4s ease-out">
+      <div style="font-size:.95rem; color:#374151; line-height:1.6">
+        <span style="font-size:1.4rem; display:block; margin-bottom:8px">🍪</span>
+        Utilizamos cookies propias y de terceros para asegurar el correcto funcionamiento del sitio web y reproducir vídeos embebidos de YouTube de forma óptima. Al continuar navegando, aceptas nuestra <a href="cookies.html" style="color:var(--green); text-decoration:underline; font-weight:700">Política de Cookies</a>.
+      </div>
+      <div style="display:flex; gap:12px; justify-content:flex-end">
+        <button id="btn-cookies-reject" style="background:transparent; border:2px solid #cbd5e1; color:#64748b; padding:10px 20px; border-radius:999px; font-weight:700; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:all .2s">Rechazar</button>
+        <button id="btn-cookies-accept" style="background:#52B788; border:none; color:#fff; padding:10px 24px; border-radius:999px; font-weight:700; font-size:.88rem; cursor:pointer; box-shadow:0 4px 12px rgba(82,183,136,0.3); font-family:'Nunito',sans-serif; transition:all .2s">Aceptar</button>
+      </div>
+    </div>
+    <style>
+      @keyframes slideUpCookies {
+        from { transform: translateY(100px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      #btn-cookies-reject:hover { background:#f1f5f9; color:#475569; }
+      #btn-cookies-accept:hover { background:#409a70; box-shadow:0 6px 16px rgba(82,183,136,0.4); }
+      @media(max-width:580px) {
+        #cookies-banner { bottom:10px; left:10px; right:10px; padding:16px; }
+      }
+    </style>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', bannerHTML);
+
+  document.getElementById('btn-cookies-accept').addEventListener('click', function() {
+    localStorage.setItem('cookies-accepted', 'true');
+    var banner = document.getElementById('cookies-banner');
+    if (banner) banner.remove();
+  });
+
+  document.getElementById('btn-cookies-reject').addEventListener('click', function() {
+    localStorage.setItem('cookies-accepted', 'false');
+    var banner = document.getElementById('cookies-banner');
+    if (banner) banner.remove();
+  });
+}
+
+// Iniciar banner de cookies después de que cargue el DOM
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCookiesBanner);
+} else {
+  initCookiesBanner();
+}
 
 })();
